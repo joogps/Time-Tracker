@@ -46,6 +46,9 @@ class ViewController: UIViewController {
             Button.setTitle("Stop", for: .normal)
             Button.setTitleColor(.red, for: .normal)
             
+            Reset.isEnabled = false
+            Reset.setTitleColor(.lightGray, for: .normal)
+            
             correctTime = true
         } else {
             timer.invalidate()
