@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StopwatchViewController.swift
 //  MyStopwatch
 //
 //  Created by João Gabriel Pozzobon dos Santos on 13/05/19.
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     @IBAction func ResetTime(_ sender: Any) {
         time = 0
-        UpdateTime()
+        Label.text = ReturnString(time)
         
         Button.setTitle("Start", for: .normal)
         Button.setTitleColor(UIColor(displayP3Red: 0, green: 196/255, blue: 14/255, alpha: 1), for: .normal)
@@ -75,10 +75,10 @@ class ViewController: UIViewController {
     
     @objc func IncrementTime() {
         time += 1
-        UpdateTime()
+        Label.text = ReturnString(time)
     }
     
-    func UpdateTime() {
+    func ReturnString(_ time: Int) -> String {
         var milliseconds = time
         var seconds = milliseconds/100
         var minutes = seconds/60
@@ -88,13 +88,13 @@ class ViewController: UIViewController {
         seconds = seconds%60
         minutes = minutes%60
         
-        var labelText = String(format: "%02d", minutes)+":"+String(format: "%02d", seconds)+"."+String(format: "%02d", milliseconds)
+        var text = String(format: "%02d", minutes)+":"+String(format: "%02d", seconds)+"."+String(format: "%02d", milliseconds)
         
         if hours >= 1 {
-            labelText = String(format: "%02d", hours)+":"+labelText
+            text = String(format: "%02d", hours)+":"+text
         }
         
-        Label.text = labelText
+        return text
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,8 +108,8 @@ class ViewController: UIViewController {
     
     @objc func activeAgain() {
         if (correctTime) {
-        time += Int(Date().timeIntervalSince1970 * 100.0.rounded() - backgroundTime.timeIntervalSince1970 * 100.0.rounded())
-            UpdateTime()
+            time += Int(Date().timeIntervalSince1970 * 100.0.rounded() - backgroundTime.timeIntervalSince1970 * 100.0.rounded())
+            Label.text = UpdateTime(time)
         }
     }
 }
