@@ -14,11 +14,9 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var Reset: UIButton!
     
     var time = 0
-    var timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(DecrementTime), userInfo: nil, repeats: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer.invalidate()
     }
     
     @IBAction func TriggerTimer(_ sender: Any) {

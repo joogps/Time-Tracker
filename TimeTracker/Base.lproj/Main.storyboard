@@ -19,6 +19,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OLj-Q4-35D"/>
                         <segue destination="cYy-Ry-x9F" kind="relationship" relationship="viewControllers" id="uYq-Q2-eHg"/>
@@ -26,7 +34,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLh-eg-ZYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-326" y="117"/>
+            <point key="canvasLocation" x="-280" y="148"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="tne-QT-ifu">
@@ -102,7 +110,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" selectedImage="Stopwatch" id="5mo-Wa-WOj"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Stopwatch" id="5mo-Wa-WOj"/>
                     <connections>
                         <outlet property="Button" destination="Gok-uN-XeF" id="6Cl-Nm-eNi"/>
                         <outlet property="Label" destination="hSC-E1-Rht" id="5rg-0E-TOO"/>
@@ -113,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="961" y="-178"/>
         </scene>
-        <!--Timer View Controller-->
+        <!--Timer-->
         <scene sceneID="vxv-FB-fWB">
             <objects>
                 <viewController id="cYy-Ry-x9F" customClass="TimerViewController" customModule="TimeTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +192,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7yP-g8-ahT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="Timer" springLoaded="YES" id="l13-yZ-baj"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Timer" springLoaded="YES" id="l13-yZ-baj"/>
                     <connections>
                         <outlet property="Button" destination="sEi-KC-AfN" id="J9d-D0-YKk"/>
                         <outlet property="Reset" destination="mP7-gt-0tx" id="tUh-to-IOy"/>
