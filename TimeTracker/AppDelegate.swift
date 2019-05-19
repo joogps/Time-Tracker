@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MyStopwatch
+//  TimeTracker
 //
 //  Created by João Gabriel Pozzobon dos Santos on 13/05/19.
 //  Copyright © 2019 João Gabriel Pozzobon dos Santos. All rights reserved.
