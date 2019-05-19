@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StopwatchViewController: UIViewController {
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var Button: UIButton!
     @IBOutlet weak var Reset: UIButton!
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         Label.adjustsFontSizeToFitWidth = true
     }
     
-    @IBAction func TriggerTimer(_ sender: Any) {
+    @IBAction func TriggerStopwatch(_ sender: Any) {
         if Button.currentTitle! == "Start" {
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(IncrementTime), userInfo: nil, repeats: true)
             
@@ -62,9 +62,9 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func ResetTime(_ sender: Any) {
+    @IBAction func ResetStopwatch(_ sender: Any) {
         time = 0
-        Label.text = ReturnString(time)
+        Label.text = MillisToString(time)
         
         Button.setTitle("Start", for: .normal)
         Button.setTitleColor(UIColor(displayP3Red: 0, green: 196/255, blue: 14/255, alpha: 1), for: .normal)
@@ -75,11 +75,11 @@ class ViewController: UIViewController {
     
     @objc func IncrementTime() {
         time += 1
-        Label.text = ReturnString(time)
+        Label.text = MillisToString(time)
     }
     
-    func ReturnString(_ time: Int) -> String {
-        var milliseconds = time
+    func MillisToString(_ millis: Int) -> String {
+        var milliseconds = millis
         var seconds = milliseconds/100
         var minutes = seconds/60
         let hours = minutes/60
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
     @objc func activeAgain() {
         if (correctTime) {
             time += Int(Date().timeIntervalSince1970 * 100.0.rounded() - backgroundTime.timeIntervalSince1970 * 100.0.rounded())
-            Label.text = UpdateTime(time)
+            Label.text = MillisToString(time)
         }
     }
 }

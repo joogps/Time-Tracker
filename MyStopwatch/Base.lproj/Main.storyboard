@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3oW-8P-JF3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DBk-h4-rG2">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,118 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uJM-OA-IxN">
+            <objects>
+                <tabBarController id="DBk-h4-rG2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4BM-gM-sRs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OLj-Q4-35D"/>
+                        <segue destination="cYy-Ry-x9F" kind="relationship" relationship="viewControllers" id="uYq-Q2-eHg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLh-eg-ZYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-326" y="117"/>
+        </scene>
         <!--Stopwatch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyStopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StopwatchViewController" customModule="MyStopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="bSY-6C-1Gj">
-                                <rect key="frame" x="74.5" y="352" width="265" height="192.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="RaP-PE-Icb">
+                                <rect key="frame" x="74.5" y="346" width="265" height="204.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnR-UU-emt">
-                                        <rect key="frame" x="0.0" y="0.0" width="265" height="58.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSC-E1-Rht">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="69.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="Xsb-Qy-pFf">
-                                        <rect key="frame" x="0.0" y="92.5" width="265" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="ktG-DG-l8S">
+                                        <rect key="frame" x="0.0" y="104.5" width="265" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RU5-VE-eyc">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gok-uN-XeF">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <color key="backgroundColor" white="0.84969190139999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.84999999999999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="7SK-Jt-CsD"/>
-                                                    <constraint firstAttribute="width" constant="100" id="at3-h9-Ykz"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Start">
-                                                    <color key="titleColor" red="0.0" green="0.7684575667350253" blue="0.05668662719581042" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="50"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="TriggerTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wpv-Pr-6cS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-B3-6fi">
-                                                <rect key="frame" x="165" y="0.0" width="100" height="100"/>
-                                                <color key="backgroundColor" white="0.84969190140845074" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="53p-BB-A38"/>
-                                                    <constraint firstAttribute="height" constant="100" id="tqX-GV-0Tf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Reset">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="50"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="ResetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OSo-Ev-vB6"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="bSY-6C-1Gj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y1M-qJ-0GJ"/>
-                            <constraint firstItem="bSY-6C-1Gj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hn4-OY-8R3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" selectedImage="Stopwatch" id="5mo-Wa-WOj"/>
-                    <connections>
-                        <outlet property="Button" destination="RU5-VE-eyc" id="maO-61-6lO"/>
-                        <outlet property="Label" destination="tnR-UU-emt" id="7pC-3Y-Cs1"/>
-                        <outlet property="Reset" destination="4nH-B3-6fi" id="Myd-do-qCm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1035" y="-192"/>
-        </scene>
-        <!--Timer-->
-        <scene sceneID="vxv-FB-fWB">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0XH-Ey-B6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="cYy-Ry-x9F" customClass="TimerViewController" customModule="MyStopwatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="udf-p1-M3r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="85g-i6-JTK">
-                                <rect key="frame" x="74.5" y="273" width="265" height="350"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4pd-eQ-W5o">
-                                        <rect key="frame" x="0.0" y="0.0" width="265" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="579568432.76997399">
-                                            <!--2019-05-14 11:13:52 PM +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="eqY-Gf-yeE">
-                                        <rect key="frame" x="0.0" y="250" width="265" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-tL-TkB">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <color key="backgroundColor" white="0.84969190139999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="gE8-PH-VHw"/>
-                                                    <constraint firstAttribute="height" constant="100" id="ubF-ov-9Dq"/>
+                                                    <constraint firstAttribute="width" constant="100" id="FXq-m0-59z"/>
+                                                    <constraint firstAttribute="height" constant="100" id="Vwf-9T-UfM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Start">
@@ -134,19 +66,19 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="TriggerTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuY-Hl-ML3"/>
+                                                    <action selector="TriggerStopwatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ah-go-wyM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F8-Uw-vgz">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wie-Pm-jau">
                                                 <rect key="frame" x="165" y="0.0" width="100" height="100"/>
-                                                <color key="backgroundColor" white="0.84969190139999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.84999999999999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="4zr-Om-uzQ"/>
-                                                    <constraint firstAttribute="width" constant="100" id="PMc-UZ-CSp"/>
+                                                    <constraint firstAttribute="width" constant="100" id="ByF-Fj-r4A"/>
+                                                    <constraint firstAttribute="height" constant="100" id="tqo-HL-sdi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Reset">
-                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
@@ -155,8 +87,90 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="ResetTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wct-6l-25Q"/>
+                                                    <action selector="ResetStopwatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sT6-K9-E0H"/>
                                                 </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RaP-PE-Icb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jf2-ng-dU5"/>
+                            <constraint firstItem="RaP-PE-Icb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eNn-j3-55m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" selectedImage="Stopwatch" id="5mo-Wa-WOj"/>
+                    <connections>
+                        <outlet property="Button" destination="Gok-uN-XeF" id="6Cl-Nm-eNi"/>
+                        <outlet property="Label" destination="hSC-E1-Rht" id="5rg-0E-TOO"/>
+                        <outlet property="Reset" destination="wie-Pm-jau" id="5ZE-Wa-H4x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="-178"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="vxv-FB-fWB">
+            <objects>
+                <viewController id="cYy-Ry-x9F" customClass="TimerViewController" customModule="MyStopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="udf-p1-M3r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-6v-nwy">
+                                <rect key="frame" x="74.5" y="272.5" width="265" height="351"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-or-sLc">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="579928525.33359599">
+                                            <!--2019-05-19 3:15:25 AM +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="A0O-Le-5nz">
+                                        <rect key="frame" x="0.0" y="251" width="265" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-KC-AfN">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="0.84999999999999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="P9N-h1-TvQ"/>
+                                                    <constraint firstAttribute="height" constant="100" id="oqc-LH-Jkf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" red="0.0" green="0.76845756669999998" blue="0.056686627199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="TriggerTimer:" destination="cYy-Ry-x9F" eventType="touchUpInside" id="Tf2-Wh-uko"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mP7-gt-0tx">
+                                                <rect key="frame" x="165" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="0.84999999999999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="2lY-Th-gnQ"/>
+                                                    <constraint firstAttribute="height" constant="100" id="ReX-Ww-TQG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -165,33 +179,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="85g-i6-JTK" firstAttribute="centerX" secondItem="udf-p1-M3r" secondAttribute="centerX" id="Yoa-iU-EwA"/>
-                            <constraint firstItem="85g-i6-JTK" firstAttribute="centerY" secondItem="udf-p1-M3r" secondAttribute="centerY" id="xzf-BJ-0MZ"/>
+                            <constraint firstItem="jMH-6v-nwy" firstAttribute="centerX" secondItem="udf-p1-M3r" secondAttribute="centerX" id="3nW-nQ-GUe"/>
+                            <constraint firstItem="jMH-6v-nwy" firstAttribute="centerY" secondItem="udf-p1-M3r" secondAttribute="centerY" id="PBt-4o-DK6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7yP-g8-ahT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timer" selectedImage="Timer" springLoaded="YES" id="l13-yZ-baj"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1035" y="502"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="qVz-69-hgy">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NWL-HI-9XS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3oW-8P-JF3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dxY-OO-5bk">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    <tabBarItem key="tabBarItem" selectedImage="Timer" springLoaded="YES" id="l13-yZ-baj"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="87d-w6-Wbf"/>
-                        <segue destination="cYy-Ry-x9F" kind="relationship" relationship="viewControllers" id="ZqP-wG-BOM"/>
+                        <outlet property="Button" destination="sEi-KC-AfN" id="J9d-D0-YKk"/>
+                        <outlet property="Reset" destination="mP7-gt-0tx" id="tUh-to-IOy"/>
+                        <outlet property="TimePicker" destination="lEb-or-sLc" id="Wf7-CH-AqX"/>
                     </connections>
-                </tabBarController>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XH-Ey-B6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="961" y="514"/>
         </scene>
     </scenes>
     <resources>

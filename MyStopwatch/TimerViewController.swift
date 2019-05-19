@@ -9,19 +9,42 @@
 import UIKit
 
 class TimerViewController: UIViewController {
-    let time = 0
-
+    @IBOutlet weak var TimePicker: UIDatePicker!
+    @IBOutlet weak var Button: UIButton!
+    @IBOutlet weak var Reset: UIButton!
+    
+    var time = 0
+    var timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(DecrementTime), userInfo: nil, repeats: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer.invalidate()
     }
-
-    func ReturnString(_ time: Int) -> String {
-        var milliseconds = time
-        var seconds = milliseconds/100
+    
+    @IBAction func TriggerTimer(_ sender: Any) {
+        if (Button.currentTitle! == "Start") {
+            let date = TimePicker.date
+            let components = Calendar.current.dateComponents([.hour, .minute], from: date)
+            
+            let hour = components.hour!
+            let minute = components.minute!
+            
+            let totalMinutes = hour*60+minute
+            let totalMillis = totalMinutes*60*1000
+            
+            time = totalMillis;
+        }
+    }
+    
+    @objc func DecrementTime() {
+        time -= 1
+    }
+    
+    func SecondsToString(_ seconds: Int) -> String {
+        var seconds = seconds
         var minutes = seconds/60
         let hours = minutes/60
         
-        milliseconds = milliseconds%100
         seconds = seconds%60
         minutes = minutes%60
         
