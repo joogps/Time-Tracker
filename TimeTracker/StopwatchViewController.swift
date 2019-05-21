@@ -34,7 +34,7 @@ class StopwatchViewController: UIViewController {
                 ]
             ])
         
-        Label.font = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 58.0)
+        Label.font = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 65.0)
         Label.adjustsFontSizeToFitWidth = true
     }
     

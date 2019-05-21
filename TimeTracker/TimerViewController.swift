@@ -66,7 +66,7 @@ class TimerViewController: UIViewController {
             
             Label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
             
-            Label.font = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 58.0)
+            Label.font = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 65.0)
             Label.adjustsFontSizeToFitWidth = true
             Label.textAlignment = .center
             
