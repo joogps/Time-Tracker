@@ -19,14 +19,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                            <color key="value" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="6ye-N9-Gme" kind="relationship" relationship="viewControllers" id="OLj-Q4-35D"/>
                         <segue destination="sQi-9G-RYW" kind="relationship" relationship="viewControllers" id="uYq-Q2-eHg"/>
@@ -45,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="RaP-PE-Icb">
-                                <rect key="frame" x="74.5" y="346" width="265" height="204.5"/>
+                                <rect key="frame" x="74.5" y="374.5" width="265" height="204.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSC-E1-Rht">
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="69.5"/>
@@ -105,7 +97,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RaP-PE-Icb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jf2-ng-dU5"/>
+                            <constraint firstItem="RaP-PE-Icb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Jf2-ng-dU5"/>
                             <constraint firstItem="RaP-PE-Icb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eNn-j3-55m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -130,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-6v-nwy">
-                                <rect key="frame" x="74.5" y="272.5" width="265" height="351"/>
+                                <rect key="frame" x="74.5" y="301" width="265" height="351"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-or-sLc">
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="216"/>
@@ -191,7 +183,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jMH-6v-nwy" firstAttribute="centerX" secondItem="udf-p1-M3r" secondAttribute="centerX" id="3nW-nQ-GUe"/>
-                            <constraint firstItem="jMH-6v-nwy" firstAttribute="centerY" secondItem="udf-p1-M3r" secondAttribute="centerY" id="PBt-4o-DK6"/>
+                            <constraint firstItem="jMH-6v-nwy" firstAttribute="centerY" secondItem="7yP-g8-ahT" secondAttribute="centerY" id="PBt-4o-DK6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7yP-g8-ahT"/>
                     </view>
