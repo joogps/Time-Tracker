@@ -16,14 +16,13 @@ class StopwatchViewController: UIViewController {
     let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body)
     
     var time = 0
-    var timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(IncrementTime), userInfo: nil, repeats: true)
+    var timer = Timer()
     
     var backgroundTime = Date()
     var correctTime = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer.invalidate()
         
         let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.addingAttributes(
             [
@@ -35,13 +34,13 @@ class StopwatchViewController: UIViewController {
                 ]
             ])
         
-        Label.font = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 50.0)
+        Label.font = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 58.0)
         Label.adjustsFontSizeToFitWidth = true
     }
     
     @IBAction func TriggerStopwatch(_ sender: Any) {
         if Button.currentTitle! == "Start" {
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(IncrementTime), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(IncrementTime), userInfo: nil, repeats: true)
             
             Button.setTitle("Stop", for: .normal)
             Button.setTitleColor(.red, for: .normal)
@@ -50,7 +49,7 @@ class StopwatchViewController: UIViewController {
             Reset.setTitleColor(.lightGray, for: .normal)
             
             correctTime = true
-        } else {
+        } else if Button.currentTitle! == "Stop" {
             timer.invalidate()
             Button.setTitle("Start", for: .normal)
             Button.setTitleColor(UIColor(displayP3Red: 0, green: 196/255, blue: 14/255, alpha: 1), for: .normal)
@@ -80,15 +79,15 @@ class StopwatchViewController: UIViewController {
     
     func MillisToString(_ millis: Int) -> String {
         var milliseconds = millis
-        var seconds = milliseconds/100
+        var seconds = milliseconds/1000
         var minutes = seconds/60
         let hours = minutes/60
         
-        milliseconds = milliseconds%100
+        milliseconds = milliseconds%1000
         seconds = seconds%60
         minutes = minutes%60
         
-        var text = String(format: "%02d", minutes)+":"+String(format: "%02d", seconds)+"."+String(format: "%02d", milliseconds)
+        var text = String(format: "%02d", minutes)+":"+String(format: "%02d", seconds)+"."+String(format: "%02d", Int(Double(milliseconds/10).rounded()))
         
         if hours >= 1 {
             text = String(format: "%02d", hours)+":"+text
@@ -108,7 +107,7 @@ class StopwatchViewController: UIViewController {
     
     @objc func activeAgain() {
         if (correctTime) {
-            time += Int(Date().timeIntervalSince1970 * 100.0.rounded() - backgroundTime.timeIntervalSince1970 * 100.0.rounded())
+            time += Int(Date().timeIntervalSince1970 * 1000.0.rounded() - backgroundTime.timeIntervalSince1970 * 1000.0.rounded())
             Label.text = MillisToString(time)
         }
     }

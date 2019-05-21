@@ -28,13 +28,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OLj-Q4-35D"/>
-                        <segue destination="cYy-Ry-x9F" kind="relationship" relationship="viewControllers" id="uYq-Q2-eHg"/>
+                        <segue destination="6ye-N9-Gme" kind="relationship" relationship="viewControllers" id="OLj-Q4-35D"/>
+                        <segue destination="sQi-9G-RYW" kind="relationship" relationship="viewControllers" id="uYq-Q2-eHg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLh-eg-ZYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-280" y="148"/>
+            <point key="canvasLocation" x="-132" y="111"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="tne-QT-ifu">
@@ -47,7 +47,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="RaP-PE-Icb">
                                 <rect key="frame" x="74.5" y="346" width="265" height="204.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSC-E1-Rht">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSC-E1-Rht">
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="69.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                         <nil key="textColor"/>
@@ -110,7 +110,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Stopwatch" id="5mo-Wa-WOj"/>
+                    <navigationItem key="navigationItem" title="Stopwatch" id="rSI-Et-PLo"/>
                     <connections>
                         <outlet property="Button" destination="Gok-uN-XeF" id="6Cl-Nm-eNi"/>
                         <outlet property="Label" destination="hSC-E1-Rht" id="5rg-0E-TOO"/>
@@ -119,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="-178"/>
+            <point key="canvasLocation" x="1871.0144927536232" y="-178.125"/>
         </scene>
         <!--Timer-->
         <scene sceneID="vxv-FB-fWB">
@@ -179,6 +179,9 @@
                                                         <integer key="value" value="50"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="ResetTimer:" destination="cYy-Ry-x9F" eventType="touchUpInside" id="Ggl-0r-C80"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -192,16 +195,55 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7yP-g8-ahT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timer" image="Timer" springLoaded="YES" id="l13-yZ-baj"/>
+                    <navigationItem key="navigationItem" title="Timer" id="BrU-jo-YZx"/>
                     <connections>
                         <outlet property="Button" destination="sEi-KC-AfN" id="J9d-D0-YKk"/>
                         <outlet property="Reset" destination="mP7-gt-0tx" id="tUh-to-IOy"/>
+                        <outlet property="StackView" destination="jMH-6v-nwy" id="KJy-IU-TiH"/>
                         <outlet property="TimePicker" destination="lEb-or-sLc" id="Wf7-CH-AqX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XH-Ey-B6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="514"/>
+            <point key="canvasLocation" x="1871.0144927536232" y="513.61607142857144"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="eJS-uo-5Cs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ye-N9-Gme" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Stopwatch" id="5mo-Wa-WOj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="c9Q-pp-he5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ig3-jO-2wc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="enc-oc-4dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.86956521739137" y="-178.125"/>
+        </scene>
+        <!--Timer-->
+        <scene sceneID="txs-dJ-nlp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sQi-9G-RYW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timer" image="Timer" springLoaded="YES" id="l13-yZ-baj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="u1U-Zg-4ym">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cYy-Ry-x9F" kind="relationship" relationship="rootViewController" id="xzR-ba-510"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mig-3U-VWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.86956521739137" y="513.61607142857144"/>
         </scene>
     </scenes>
     <resources>
