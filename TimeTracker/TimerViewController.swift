@@ -113,6 +113,9 @@ class TimerViewController: UIViewController {
         TimePicker.datePickerMode = .countDownTimer
         TimePicker.countDownDuration = TimeInterval(time/1000)
         
+        let widthConstraint = NSLayoutConstraint(item: TimePicker!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: Label.frame.width)
+        NSLayoutConstraint.activate([widthConstraint])
+        
         Button.setTitle("Start", for: .normal)
         Button.setTitleColor(UIColor(displayP3Red: 0, green: 196/255, blue: 14/255, alpha: 1), for: .normal)
         
