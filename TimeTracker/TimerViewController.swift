@@ -155,13 +155,18 @@ class TimerViewController: UIViewController {
         return text
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: Selector(("activeAgain")), name: NSNotification.Name(rawValue: "UIApplicationDidBecomeActiveNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: Selector(("goingAway")), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: nil)
+    }
+    
     @objc func goingAway() {
         backgroundTime = Date()
     }
     
     @objc func activeAgain() {
         if (correctTime) {
-            time += Int(Date().timeIntervalSince1970 * 1000.0.rounded() - backgroundTime.timeIntervalSince1970 * 1000.0.rounded())
+            time -= Int(Date().timeIntervalSince1970 * 1000.0.rounded() - backgroundTime.timeIntervalSince1970 * 1000.0.rounded())
             Label.text = MillisToString(time)
         }
     }
