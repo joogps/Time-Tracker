@@ -16,9 +16,9 @@ class StopwatchViewController: UIViewController {
     let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body)
     
     var time = 0
-    var timer = Timer()
+    var timer: Timer?
     
-    var backgroundTime = Date()
+    var backgroundTime: Date?
     var correctTime = false
 
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class StopwatchViewController: UIViewController {
             
             correctTime = true
         } else if Button.currentTitle! == "Stop" {
-            timer.invalidate()
+            timer?.invalidate()
             Button.setTitle("Start", for: .normal)
             Button.setTitleColor(UIColor(displayP3Red: 0, green: 196/255, blue: 14/255, alpha: 1), for: .normal)
             
@@ -107,7 +107,7 @@ class StopwatchViewController: UIViewController {
     
     @objc func activeAgain() {
         if (correctTime) {
-            time += Int(Date().timeIntervalSince1970 * 1000.0.rounded() - backgroundTime.timeIntervalSince1970 * 1000.0.rounded())
+            time += Int(Date().timeIntervalSince1970 * 1000.0.rounded() - backgroundTime!.timeIntervalSince1970 * 1000.0.rounded())
             Label.text = MillisToString(time)
         }
     }
