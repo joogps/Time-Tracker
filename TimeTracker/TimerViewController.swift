@@ -128,7 +128,7 @@ class TimerViewController: UIViewController {
         TimePicker = UIDatePicker()
         TimePicker.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         TimePicker.datePickerMode = .countDownTimer
-        TimePicker.countDownDuration = TimeInterval(lastTimeSet)
+        TimePicker.countDownDuration = TimeInterval(lastTimeSet/1000)
         
         let widthConstraint = NSLayoutConstraint(item: TimePicker!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: Label!.frame.width)
         NSLayoutConstraint.activate([widthConstraint])
